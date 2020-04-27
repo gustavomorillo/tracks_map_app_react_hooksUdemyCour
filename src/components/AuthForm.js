@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ScrollView } from "react-native";
 import { Text, Button, Input } from "react-native-elements";
 import { View, StyleSheet } from "react-native";
 import Spacer from "./Spacer";
@@ -7,7 +8,7 @@ const AuthForm = ({ headerText, errorMessage, onSubmit, submitButtonText, state 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
-    <>
+    <ScrollView>
       <Spacer>
         <Text h3>{headerText}</Text>
       </Spacer>
@@ -25,7 +26,7 @@ const AuthForm = ({ headerText, errorMessage, onSubmit, submitButtonText, state 
       <Spacer>
         <Button title={submitButtonText} onPress={() => onSubmit({ email, password })}></Button>
       </Spacer>
-    </>
+    </ScrollView>
   );
 };
 
